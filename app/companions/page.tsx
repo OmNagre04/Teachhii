@@ -1,5 +1,5 @@
 
-const Companion = () => {
+const CompanionLibrary = () => {
   return (
     <div>
       Companions 
@@ -7,4 +7,4 @@ const Companion = () => {
   )
 }
 
-export default Companion
+export default CompanionLibrary

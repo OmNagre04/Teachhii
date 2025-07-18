@@ -23,6 +23,8 @@ import {
 } from "@/components/ui/select";
 import { subjects } from "@/constants";
 import { Textarea } from "./ui/textarea";
+import { createCompanion } from "@/lib/actions/companion.actions";
+import { redirect } from "next/navigation";
 
 // ✅ Zod schema
 const formSchema = z.object({
@@ -47,8 +49,15 @@ const CompanionForm = () => {
     },
   });
 
-  const onSubmit = (values: z.infer<typeof formSchema>) => {
-    console.log("Form Values:", values);
+  const onSubmit = async (values: z.infer<typeof formSchema>) => {
+    const companion = await createCompanion(values);
+
+    if(companion){
+      redirect(`/companions/${companion.id}`);
+    } else{
+      console.log("Failed to create companion");
+      redirect('/');
+    }
   };
 
   return (
