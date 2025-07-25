@@ -1,3 +1,5 @@
+// constants.ts
+
 export const subjects = [
   "maths",
   "language",
@@ -16,9 +18,16 @@ export const subjectsColors = {
   economics: "#C8FFDF",
 };
 
+// You can keep keys lowercase and normalize in logic
 export const voices = {
-  male: { casual: "2BJW5coyhAzSr8STdHbE", formal: "c6SfcYrb2t09NHXiT80T" },
-  female: { casual: "ZIlrSGI4jZqobxRKprJz", formal: "sarah" },
+  male: {
+    casual: "2BJW5coyhAzSr8STdHbE", // Male voice (Casual style)
+    formal: "c6SfcYrb2t09NHXiT80T", // Male voice (Formal style)
+  },
+  female: {
+    casual: "ZIlrSGI4jZqobxRKprJz", // Female voice (Casual style)
+    formal: "sarah",               // Female voice (Formal style / fallback)
+  },
 };
 
 export const recentSessions = [
