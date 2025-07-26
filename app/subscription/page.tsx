@@ -3,9 +3,9 @@ import React from 'react'
 
 const Subscription = () => {
   return (
-    <div>
+    <main className="min-lg:w-3/4">
       <PricingTable/>
-    </div>
+    </main>
   )
 }
 
