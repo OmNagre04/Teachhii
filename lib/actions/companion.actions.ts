@@ -113,7 +113,7 @@ export const newCompanionPermission = async () => {
 
   let limit = 0;
 
-  if(has({plan: 'pro'})){
+  if(has({plan: 'pro_learning'})){
     return true;
   } else if(has({feature: '3_active_companion'})){
     limit = 3;
@@ -128,7 +128,7 @@ export const newCompanionPermission = async () => {
 
     if(error ) throw new Error(error.message);
 
-    const companionCount = data.length;
+    const companionCount = data?.length;
 
     if(companionCount >= limit){
       return false;
